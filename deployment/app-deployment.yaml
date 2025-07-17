@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      serviceAccountName: demo-sa
+      containers:
+        - name: app-container
+          image: your-dockerhub-username/k8s-demo-app:latest
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: app-config
+          volumeMounts:
+            - mountPath: "/data"
+              name: demo-storage
+      volumes:
+        - name: demo-storage
+          persistentVolumeClaim:
+            claimName: demo-pvc
+
