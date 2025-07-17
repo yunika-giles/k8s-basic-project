@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: app-config
 data:
-  WELCOME_MESSAGE: "Welcome to Kubernetes Learning Project!"
+   APP_TITLE: "Kubernetes Note Taking App"
 
