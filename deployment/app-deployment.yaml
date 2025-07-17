@@ -15,7 +15,7 @@ spec:
       serviceAccountName: demo-sa
       containers:
         - name: note-container
-          image: your-dockerhub-username/k8s-note-app:latest
+          image: giles97/k8s-note-app:latest
           ports:
             - containerPort: 5000
           envFrom:
@@ -28,4 +28,4 @@ spec:
         - name: note-storage
           persistentVolumeClaim:
             claimName: demo-pvc
-  
+

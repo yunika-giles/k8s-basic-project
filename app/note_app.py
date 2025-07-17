@@ -32,4 +32,3 @@ if __name__ == "__main__":
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
     app.run(host="0.0.0.0", port=5000)
 
-
